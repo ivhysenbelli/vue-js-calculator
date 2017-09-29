@@ -6,37 +6,39 @@
 	<link rel="stylesheet" href="mainstyle.css">
 </head>
 <body>
+	<div id="app">
 	<div class="calculator">
-		<div class="display"> Display the value of the data calculated or entered</div>
-		<h1 class="brand">Application Title</h1>
+		<div class="display"> {{display}}</div>
+		<h1 class="brand">Vue JS Calculator</h1>
 		<div class="keyboard">
 			<div class="panel-a">
 				<div class="top-buttons">
-					<button class="btn primary"><span> C</span></button>
-					<button class="btn"><span> . </span></button>
+					<button @click="clear" class="btn primary"><span> C</span></button>
+					<button @click="setNumber('.')" class="btn"><span> . </span></button>
 				</div>
 				<div class="numbers">
-					<button class="btn"><span>9</span></button>
-					<button class="btn"><span>8</span></button>
-					<button class="btn"><span>7</span></button>
-					<button class="btn"><span>6</span></button>
-					<button class="btn"><span>5</span></button>
-					<button class="btn"><span>4</span></button>
-					<button class="btn"><span>3</span></button>
-					<button class="btn"><span>2</span></button>
-					<button class="btn"><span>1</span></button>
-					<button class="btn"><span>0</span></button>
+					<button @click="setNumber('9')" class="btn"><span>9</span></button>
+					<button @click="setNumber('8')" class="btn"><span>8</span></button>
+					<button @click="setNumber('7')" class="btn"><span>7</span></button>
+					<button @click="setNumber('6')" class="btn"><span>6</span></button>
+					<button @click="setNumber('5')" class="btn"><span>5</span></button>
+					<button @click="setNumber('4')" class="btn"><span>4</span></button>
+					<button @click="setNumber('3')" class="btn"><span>3</span></button>
+					<button @click="setNumber('2')" class="btn"><span>2</span></button>
+					<button @click="setNumber('1')" class="btn"><span>1</span></button>
+					<button @click="setNumber('0')" class="btn"><span>0</span></button>
 				</div>
 			</div>
 			<div class="panel-b">
-				<button class="btn"><span>+</span></button>
-				<button class="btn"><span>-</span></button>
-				<button class="btn"><span>*</span></button>
-				<button class="btn"><span>/</span></button>
+				<button @click="operator= '+'" class="btn"><span>+</span></button>
+				<button @click="operator= '-'" class="btn"><span>-</span></button>
+				<button @click="operator= '*'" class="btn"><span>*</span></button>
+				<button @click="operator= '/'" class="btn"><span>/</span></button>
+				<button class="btn primary" @click="calculate"> <span>=</span></button>
 			</div>
 		</div>
-	</div>
+	</div></div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.4/vue.min.js"></script>
-	<script src="app1.js"></script>
+	<script src="./app.js"></script>
 </body>
 </html>

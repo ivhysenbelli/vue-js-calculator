@@ -1,8 +1,124 @@
-.calculator {
+//FONTS
+@import url('https://fonts.googleapis.com/css?family=Bungee+Hairline');
+$font-primary: 'Bungee Hairline', cursive;
+
+// COLORS
+$white: #fff;
+$black: #000;
+$calc-col: #eee;
+$btn-col: #333;
+$primary-btn: dodgerblue;
+
+
+// GENERAL
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+body{
+  background: $black;
+  font-family: $font-primary;
+  font-size: 16px;
+}
+
+
+// CALCULATOR STYLES
+.calculator{
+  width: 30rem;
+  max-width: 100%;
+  margin: 3rem auto;
+  padding: .3rem;
+  .display{
+    height: 4rem;
+    line-height: 4rem;
+    margin: 0 .3rem;
+    padding: 0 0;
+    text-align: right;
+    font-size: 1.5em;
+    color: $white;
+    border-bottom: 1px solid rgba($white, .15);
+  }
+  .brand{
+    margin: .6rem 0 0.3rem;
+    padding: 0 .3rem;
+    text-align: right;
+    font-size: .65em;
+    color: rgba($white, .85);
+  }
+  .keyboard{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    .display {
-      font-size: 50px;
+    flex-wrap: wrap;
+    .btn{
+      margin: 0;
+      padding: 0;
+      height: 4.6rem;
+      line-height: 4rem;
+      text-align: center;
+      font-family: inherit;
+      font-size: 1.25em;
+      border: none;
+      background: transparent;
+      outline: none;
+      &:hover{
+        span{
+          background: lighten($btn-col, 10%);
+        }
+      }
+      span{
+        display: block;
+        margin: .3rem;
+        color: $white;
+        background: $btn-col;
+        border-radius: 3px;
+        transition: background-color .4s;
+      }
+      &.primary{
+        &:hover {
+          span{
+            background: lighten($primary-btn, 15%);
+          }
+        }
+        span{
+          background: $primary-btn;
+        }
+      }
     }
+    .panel-a{ 
+      width: 75%;
+      .top-buttons{
+        .btn{
+          width: 33.3%;
+          &:last-of-type{
+            float: right;
+          }
+          span{
+            font-weight: bold;
+          }
+        }
+      }
+      .numbers{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row-reverse;
+        align-items: flex-end;
+        align-content: flex-end;
+        .btn{
+          width: 33.3%;
+          &:nth-child(10){
+            width: 100%;
+          }
+        }
+      }
+    }
+    .panel-b{
+      display: flex;
+      flex-direction: column;
+      width: 25%;
+      .btn{
+        width: 100%;
+        span{
+          font-weight: bold;
+        }
+      }
+    }
+  }
 }
