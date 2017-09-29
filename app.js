@@ -1,54 +1,48 @@
-// ROOT ELEMENT
 var app = new Vue({
-  el: '#app',
-  data: {
-    appTitle: 'Vue Calculator',
-    a: '',
-    b: '',
-    tot: 0,
-    display: 0,
-    operator: null
-  },
-  
-  methods: {
-    setNumber(num){
-      if(this.operator === null){
-        this.a += num;
-        this.display = this.a;
-      }
-      else{
-        this.b += num;
-        this.display = this.b;
-      }
+    el: '#app',
+    data: {
+        number1: '',
+        number2: '',
+        total: 0,
+        display: 0,
+        operator: null
     },
-    
-    calculate(){
-      switch(this.operator){
-        case '+':
-          this.tot = parseFloat(this.a) + parseFloat(this.b);
-          break;
-        case '-':
-          this.tot = parseFloat(this.a) - parseFloat(this.b);
-          break;
-        case '*':
-          this.tot = parseFloat(this.a) * parseFloat(this.b);
-          break;
-        case '/':
-          this.tot = parseFloat(this.a) / parseFloat(this.b);
-          break;
-      }
-      this.display = this.tot;
-      this.a = '' + this.tot + ''; 
-      this.b = '';
-      this.operator = null;
-    },
-    
-    clear(){
-      this.a = '';
-      this.b = '';
-      this.tot = 0;
-      this.display = 0;
-      this.operator = null;
+    methods: {
+        setNumber(number) {
+            if (this.operator === null) {
+                this.number1 += number;
+                this.display = this.number1;
+            } else {
+                this.number2 += number;
+                this.display = this.number2;
+            }
+        },
+        calculate() {
+            switch (this.operator) {
+                case '+':
+                    this.total = parseFloat(this.number1) + parseFloat(this.number2);
+                    break;
+                case '-':
+                    this.total = parseFloat(this.number1) - parseFloat(this.number2);
+                    break;
+                case '*':
+                    this.total = parseFloat(this.number1) * parseFloat(this.number2);
+                    break;
+                case '/':
+                    this.total = parseFloat(this.number1) / parseFloat(this.number2);
+                    break;
+            }
+            this.display = this.total;
+            this.number1 = '' + this.total + '';
+            this.number2 = '';
+            this.operator = null;
+        },
+        clear() {
+            this.number1 = '';
+            this.number2 = '';
+            this.tot = 0;
+            this.display = 0;
+            this.operator = null;
+        }
     }
-  }
 });
