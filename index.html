@@ -7,30 +7,27 @@
     <link rel="stylesheet" href="mainstyle.css">
     <script src="https://unpkg.com/vue@2.4.4/dist/vue.js"></script>
 </head>
-
 <body>
-    <div id="app" class="wrapper">
-        <div class="calculator">
-            <div class="display-panel">
-                <div class="display-value">
-                    {{display}}
-                </div>
-            </div>
+    <div  class="wrapper">
+        <div id="app" class="calculator">
+            <div class="display-panel"> <div class="display-value">
+              {{display}}
+            </div> </div>
             <div class="keyboard">
                 <div class="numbers">
-                    <button class="btn" @click=setNumber( '9')><span>9</span></button>
-                    <button class="btn" @click=setNumber( '8')><span>8</span></button>
-                    <button class="btn" @click=setNumber( '7')><span>7</span></button>
-                    <button class="btn" @click=setNumber( '6')><span>6</span></button>
-                    <button class="btn" @click=setNumber( '5')><span>5</span></button>
-                    <button class="btn" @click=setNumber( '4')><span>4</span></button>
-                    <button class="btn" @click=setNumber( '3')><span>3</span></button>
-                    <button class="btn" @click=setNumber( '2')><span>2</span></button>
-                    <button class="btn" @click=setNumber( '1')><span>1</span></button>
+                    <button class="btn" @click=setNumber('9')><span>9</span></button>
+                    <button class="btn" @click=setNumber('8')><span>8</span></button>
+                    <button class="btn" @click=setNumber('7')><span>7</span></button>
+                    <button class="btn" @click=setNumber('6')><span>6</span></button>
+                    <button class="btn" @click=setNumber('5')><span>5</span></button>
+                    <button class="btn" @click=setNumber('4')><span>4</span></button>
+                    <button class="btn" @click=setNumber('3')><span>3</span></button>
+                    <button class="btn" @click=setNumber('2')><span>2</span></button>
+                    <button class="btn" @click=setNumber('1')><span>1</span></button>
                     <button class="btn" @click=clear()><span>C</span></button>
-                    <button class="btn" @click=setNumber( '.')><span>.</span></button>
-                    <button class="btn" @click=setNumber( '0')><span>0</span></button>
-                </div>a
+                    <button class="btn" @click=setNumber('.')><span>.</span></button>
+                    <button class="btn" @click=setNumber('0')><span>0</span></button>
+                </div>
                 <div class="operations">
                     <button class="btn operation" @click="operator = '+' "><span>+</span></button>
                     <button class="btn operation" @click="operator = '-' "><span>-</span></button>
@@ -43,5 +40,4 @@
     </div>
     <script src="./app.js"></script>
 </body>
-
 </html>
